@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(0, 0, 0, 0.87);
   background-color: #f5f5f5;
 
   font-synthesis: none;
@@ -67,3 +67,84 @@ h1 {
   font-size: 24px; 
 }
 
+form{
+  display: flex;
+  justify-content: center;
+
+  padding: 50px;
+}
+
+.search-btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #845147; 
+  margin-left: 20px;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.search-btn:hover {
+  transform: scale(1.1); 
+  background-color: #61443b; 
+}
+
+input {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  padding: 10px 15px;
+  width: 100%;
+  max-width: 400px;
+  border: 2px solid #d7ccc8; /* Light brown border */
+  border-radius: 25px; /* Fully rounded corners */
+  outline: none;
+  background-color: #fdfdfd; /* Slightly off-white background */
+  color: #4e342e; /* Brown text color */
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: #4e342e; /* Darker brown on focus */
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow */
+}
+
+
+.quote-card {
+  background-color: #fffaf3; /* Off-white background for a warm aesthetic */
+  color: #4e342e; /* Soft brown text color */
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center; /* Centers the text */
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-text {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.quote-source {
+  font-size: 16px;
+  font-style: italic;
+  color: #6d4c41; /* Slightly darker brown for contrast */
+}
+
+/* Optional: Add hover effect */
+.quote-card:hover {
+  transform: scale(1.02); /* Slightly enlarge the card on hover */
+  box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+  transition: all 0.3s ease;
+}
