@@ -1,11 +1,14 @@
 import { useState } from 'react'
-import Home from './components/home'
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 
+import Home from './components/home'
+import SearchResults from './components/searchResults'
 function App() {
-  
+  const [movies, setMovies] = useState([]);
   return (
     <>
-      <Home />    
+      {/* <Home />     */}
+      <SearchResults movies={movies}/>
     </>
   )
 }

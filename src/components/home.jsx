@@ -1,23 +1,25 @@
 import React,{useState} from "react";
 import imgUrl from '../assets/images/forrest-gump.png'
-
+import Footer from "./footer";
 import CustomMarquee from "./customMarquee";
-export default function Home(){
-    const [movie, setMovie] = useState()
+import Header from "./header"
+export default function Home({movies}){
+    const [movie, setMovie] = useState({});
+    
+    const apiKey = import.meta.env.VITE_API_KEY;
     function handleSubmit(e){
         e.preventDefault()
-        console.log(movie)
+        fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${movie}`)
+            .then(res => res.json())
+            .then(data => setMovies(data.Search))
     }
     function handleChange(e){
         setMovie(e.target.value)
     }
+    console.log(movies)
     return (
         <div className="home-page">
-            <header className="header-banner">
-                <div className="overlay">
-                    <h1 className="heading">Film Quest</h1>
-                </div>
-            </header>
+            <Header/>
             <div className="form-div">
                 <form action="" onSubmit={handleSubmit}>
                     <input onChange={handleChange} type="text" className="search-field" placeholder="Search for a movie..."/>
@@ -25,6 +27,7 @@ export default function Home(){
                 </form>
             </div>
             <CustomMarquee/>
+            <Footer/>
         </div>
     )
 }

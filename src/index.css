@@ -25,6 +25,11 @@ h1 {
   line-height: 1.1;
 }
 
+h2{
+  font-size: 2.3rem;
+  line-height: 1.1;
+}
+
 .heading {
   font-family: "Barriecito", system-ui;
   font-weight: 800;
@@ -47,11 +52,27 @@ h1 {
   background-image: url('./assets/images/forrest-gump.png');
   background-size: cover; 
   background-position: center; 
-  height: 300px;  
+  height: 200px;  
   width: 100%; 
   position: relative; 
 }
 
+footer {
+  background-color: #161616;
+  color: #AAAAAA;
+  height: 74px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  font-weight: 500;
+  position: relative;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+}
 
 .overlay {
   position: absolute;
@@ -100,32 +121,32 @@ input {
   padding: 10px 15px;
   width: 100%;
   max-width: 400px;
-  border: 2px solid #d7ccc8; /* Light brown border */
-  border-radius: 25px; /* Fully rounded corners */
+  border: 2px solid #d7ccc8; 
+  border-radius: 25px; 
   outline: none;
-  background-color: #fdfdfd; /* Slightly off-white background */
-  color: #4e342e; /* Brown text color */
+  background-color: #fdfdfd; 
+  color: #4e342e; 
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus {
-  border-color: #4e342e; /* Darker brown on focus */
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow */
+  border-color: #4e342e; 
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); 
 }
 
 
 .quote-card {
-  background-color: #fffaf3; /* Off-white background for a warm aesthetic */
-  color: #4e342e; /* Soft brown text color */
+  background-color: #fffaf3; 
+  color: #4e342e; 
   font-family: 'Poppins', sans-serif;
   padding: 20px;
   margin: 20px auto;
   width: 80%;
   max-width: 600px;
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  text-align: center; /* Centers the text */
+  border-radius: 12px; 
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1); 
+  text-align: center; 
   position: relative;
   overflow: hidden;
 }
@@ -139,12 +160,65 @@ input:focus {
 .quote-source {
   font-size: 16px;
   font-style: italic;
-  color: #6d4c41; /* Slightly darker brown for contrast */
+  color: #6d4c41; 
 }
 
-/* Optional: Add hover effect */
 .quote-card:hover {
-  transform: scale(1.02); /* Slightly enlarge the card on hover */
-  box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+  transform: scale(1.02); 
+  box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.15); 
   transition: all 0.3s ease;
+}
+
+/* movie results css */
+
+.search-heading{
+  display: flex;
+  justify-content: center;
+}
+#movie-container {
+  
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+/* Movie Tile */
+.movie-tile {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.movie-tile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Movie Poster */
+.movie-poster {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+/* Movie Details */
+.movie-details {
+  padding: 15px;
+  text-align: center;
+}
+
+.movie-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #5a4a3d;
+}
+
+.movie-year {
+  font-size: 0.9rem;
+  color: #7d6c5a;
 }
