@@ -3,15 +3,19 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 
 import Home from './components/home'
 import SearchResults from './components/searchResults'
+import SearchMovie from './components/searchMovie'
 function App() {
+  const [movie, setMovie] = useState("");
   const [movies, setMovies] = useState([]);
   const [searched, setSearched] = useState(false)
   return (
     
       <BrowserRouter>
           <Routes>
-              <Route path="/results" element={<SearchResults movies={movies}/>}/>
-              <Route path="" element={<Home movies={movies} setMovies={setMovies} searched={searched} setSearched={setSearched}/>}/>
+              <Route path="" element={<Home movie={movie} setMovie={setMovie} />}/>
+              <Route path="/results" element={<SearchResults movie={movie} movies={movies} setMovies={setMovies}/>}/>
+              <Route path="/results/:id" element={<SearchMovie/>}/>
+              
           </Routes>
       </BrowserRouter>
     
