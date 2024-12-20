@@ -11,7 +11,12 @@ export default function SearchMovie(){
             .then(res => res.json())
                 .then(data => setDetails(data))
     },[])
-
+    // let ratings = [];
+    // let rotten = "";
+    // if(details){
+    //     ratings = details.Ratings
+    //     rotten = ratings[1].Value
+    // }
     return (
         <div id="movie-details-container">
             <div className="poster-section">
@@ -34,7 +39,7 @@ export default function SearchMovie(){
 
                 <div className="ratings">
                     <p><strong>IMDb Rating:</strong> {details.imdbRating} </p>
-                    <p><strong>Rotten Tomatoes:</strong> </p>
+                    {/* <p><strong>Rotten Tomatoes:</strong> {rotten}</p> */}
                 </div>
             </div>
         </div>

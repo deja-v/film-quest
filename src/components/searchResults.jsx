@@ -3,12 +3,13 @@ import Header from "./header";
 import Footer from "./footer";
 import { Link } from "react-router-dom";
 import { color, display } from "@mui/system";
+import ContentModal from "./modal/contentModal";
 export default function SearchResults({movie, movies,setMovies}){
     const apiKey = import.meta.env.VITE_API_KEY;
     
-    const movieElements = movies ? movies.map((item)=>(
-        <div key={item.imdbID} className="movie">
-            <Link to={`/results/${item.imdbID}`}>
+    const movieElements = movies.map((item)=>(
+        <ContentModal key={item.imdbID} imdbID={item.imdbID}>
+            {/* <Link to={`/results/${item.imdbID}`}> */}
                 <div className="movie-tile">
                     <img src={item.Poster} alt="Movie Poster" className="movie-poster" />
                     <div className="movie-details">
@@ -16,9 +17,9 @@ export default function SearchResults({movie, movies,setMovies}){
                         <p className="movie-year">Released: {item.Year}</p>
                     </div>
                 </div>
-            </Link>
-        </div>
-    )) : <div></div> 
+            {/* </Link> */}
+        </ContentModal>
+    ))  
 
     useEffect(()=>{
         fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${movie}`)
