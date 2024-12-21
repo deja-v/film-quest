@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router";
+import { FaImdb } from "react-icons/fa";
 
 export default function SearchMovie({flag}){
     const params = useParams();
@@ -14,7 +15,7 @@ export default function SearchMovie({flag}){
     // let ratings = [];
     // let rotten = "";
     // if(details){
-    //     ratings = details.Ratings
+    //     ratings = details.Ratings? details.Ratings: []
     //     rotten = ratings[1].Value
     // }
     return (
@@ -44,8 +45,9 @@ export default function SearchMovie({flag}){
                 </div>
 
                 <div className="ratings">
-                    <p><strong>IMDb Rating:</strong> {details.imdbRating} </p>
-                    {/* <p><strong>Rotten Tomatoes:</strong> {rotten}</p> */}
+                    <p><strong>
+                    IMDb Rating:</strong> {details.imdbRating} </p>
+                    {/* <p><strong>Rotten Tomatoes:</strong> {rotten? rotten: NA}</p> */}
                 </div>
             </div>
         </div>
