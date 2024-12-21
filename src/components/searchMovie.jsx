@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router";
 
-export default function SearchMovie(){
+export default function SearchMovie({flag}){
     const params = useParams();
     const imdbID = params.id;
     const apiKey = import.meta.env.VITE_API_KEY;
@@ -19,9 +19,12 @@ export default function SearchMovie(){
     // }
     return (
         <div id="movie-details-container">
-            <div className="back-to-home">
+            {flag?<div className="back-to-home">
                 <Link to="/results" className="home-link">← Back to Movies</Link>
             </div>
+            :<div className="back-to-home">
+                <Link to="/" className="home-link">← Back to Search</Link>
+            </div>}
             <div className="poster-section">
                 <img src={details.Poster} alt="Movie Poster" className="movie-poster" />
             </div>

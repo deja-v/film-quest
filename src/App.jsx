@@ -9,18 +9,20 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [searched, setSearched] = useState(false)
 
-    useEffect(()=>{
+  useEffect(()=>{
         localStorage.setItem("movie",movie)
     },[movie])
-
+    
+    
 
   return (
     
       <BrowserRouter>
           <Routes>
               <Route path="" element={<Home movie={movie} setMovie={setMovie} />}/>
+              <Route path="/:id" element={<SearchMovie flag={false}/>}/>
               <Route path="/results" element={<SearchResults movie={movie} setMovie={setMovie} movies={movies} setMovies={setMovies}/>}/>
-              <Route path="/results/:id" element={<SearchMovie/>}/>
+              <Route path="/results/:id" element={<SearchMovie flag={true}/>}/>
               
           </Routes>
       </BrowserRouter>
