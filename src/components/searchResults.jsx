@@ -8,8 +8,8 @@ export default function SearchResults({movie, movies,setMovies}){
     const apiKey = import.meta.env.VITE_API_KEY;
     
     const movieElements = movies.map((item)=>(
-        <ContentModal key={item.imdbID} imdbID={item.imdbID}>
-            {/* <Link to={`/results/${item.imdbID}`}> */}
+        <div key={item.imdbID} >
+            <Link to={`/results/${item.imdbID}`}>
                 <div className="movie-tile">
                     <img src={item.Poster} alt="Movie Poster" className="movie-poster" />
                     <div className="movie-details">
@@ -17,8 +17,8 @@ export default function SearchResults({movie, movies,setMovies}){
                         <p className="movie-year">Released: {item.Year}</p>
                     </div>
                 </div>
-            {/* </Link> */}
-        </ContentModal>
+            </Link>
+        </div>
     ))  
 
     useEffect(()=>{
