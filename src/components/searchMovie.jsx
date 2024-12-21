@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams, Link } from "react-router";
 
 export default function SearchMovie(){
     const params = useParams();
@@ -19,6 +19,9 @@ export default function SearchMovie(){
     // }
     return (
         <div id="movie-details-container">
+            <div className="back-to-home">
+                <Link to="/results" className="home-link">← Back to Movies</Link>
+            </div>
             <div className="poster-section">
                 <img src={details.Poster} alt="Movie Poster" className="movie-poster" />
             </div>
